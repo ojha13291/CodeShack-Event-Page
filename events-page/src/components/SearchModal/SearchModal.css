@@ -1,0 +1,110 @@
+.search-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--spacing-xl);
+  backdrop-filter: blur(4px);
+}
+
+.search-modal {
+  background-color: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 600px;
+  margin-top: 100px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.search-modal-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--primary-text);
+  font-size: var(--font-lg);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--tertiary-text);
+}
+
+.search-close {
+  background: transparent;
+  border: none;
+  color: var(--secondary-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xs);
+  transition: color 0.2s ease;
+}
+
+.search-close:hover {
+  color: var(--primary-text);
+}
+
+.search-results {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+}
+
+.search-result-item {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-result-item:hover {
+  background-color: var(--card-bg);
+}
+
+.search-result-content h4 {
+  color: var(--primary-text);
+  font-size: var(--font-md);
+  font-weight: 600;
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.search-result-meta {
+  color: var(--secondary-text);
+  font-size: var(--font-sm);
+  margin: 0;
+}
+
+.search-empty {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--tertiary-text);
+}
+
+@media (max-width: 768px) {
+  .search-modal-overlay {
+    padding: 0;
+  }
+
+  .search-modal {
+    margin-top: 0;
+    border-radius: 0;
+    height: 100%;
+    max-width: 100%;
+  }
+}
